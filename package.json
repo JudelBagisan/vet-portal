@@ -1,10 +1,18 @@
 {
+  "name": "vet-portal",
+  "version": "1.0.0",
+  "description": "VetLink portal using Tailwind CSS",
+  "main": "index.js",
   "scripts": {
-  "dev": "npx tailwindcss -i ./src/input.css -o ./code/output.css --watch",
-  "build": "npx tailwindcss -i ./src/input.css -o ./code/output.css --minify"
+    "build": "tailwindcss -i ./src/input.css -o ./code/output.css --minify",
+    "start": "live-server"
   },
-  "dependencies": {
-    "@tailwindcss/cli": "^4.1.8",
-    "tailwindcss": "^4.1.8"
-  }
+  "author": "Judel Bagisan",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.3.3",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.30"
+  },
+  "dependencies": {}
 }
