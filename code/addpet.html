@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VetPortal</title>
+    <link rel="stylesheet" href="/code/output.css">
+</head>
+<body class="min-h-screen bg-offwhite-100">
+    <div class="fixed w-[70%] md:w-[25%] bg-white h-full p-10 hidden flex-col text-grey-100" id="sideBar">
+        <div class="flex flex-col">
+            <div class="flex justify-end">
+                <img src="./media/burger-short.png" alt="nav-icon point" class="w-10 cursor-pointer" onclick="toggleSideBar()">
+            </div>
+            <div class="flex mt-20">
+                <div class="bg-blue-500 w-12 h-12 filter-grey rounded-md"></div>
+                <div class="ml-2">
+                    <h1 class="font-semibold text-offblack-100 text-xl">Glydel Despojo</h1>
+                    <p class="text-grey-100">Fill the form below</p>
+                </div>  
+            </div>
+            <div class="flex flex-col gap-3 mt-20">
+                <div class="flex items-center rounded-md hover:bg-lightgrey-100 hover:cursor-pointer hover:text-blue-500">
+                    <img src="./media/dashboard-svgrepo-com.svg" alt="dashboard-icon" class="h-12 filter-grey">
+                    <p class="ml-2">Dashboard</p>
+                </div>
+                <div class="flex items-center rounded-md hover:bg-lightgrey-100 hover:cursor-pointer hover:text-blue-500">
+                    <img src="./media/paw-svgrepo-com.svg" alt="dashboard-icon" class="h-12 filter-grey">
+                    <p class="ml-2">Pet List</p>
+                </div>
+                <div class="flex items-center rounded-md hover:bg-lightgrey-100 hover:cursor-pointer hover:text-blue-500">
+                    <img src="./media/dashboard-svgrepo-com.svg" alt="dashboard-icon" class="h-12 filter-grey">
+                    <p class="ml-2">Dashboard</p>
+                </div>
+                <div class="flex items-center rounded-md hover:bg-lightgrey-100 hover:cursor-pointer hover:text-blue-500">
+                    <img src="./media/dashboard-svgrepo-com.svg" alt="dashboard-icon" class="h-12 filter-grey">
+                    <p class="ml-2">Dashboard</p>
+                </div>
+            </div>
+            <div class="flex items-center rounded-md hover:bg-lightgrey-100 hover:cursor-pointer mt-20 hover:text-blue-500">
+                <img src="./media/sign-out-left-2-svgrepo-com.svg" alt="dashboard-icon" class="h-12 filter-grey">
+                <p class="ml-2">Log-out</p>
+            </div>
+        </div>
+    </div>
+    <div class="p-10 w-full h-full flex flex-col">
+        <div class="flex flex-col border-b border-b-lightgrey-100">
+            <div>
+                <img src="./media/burger-long.png" alt="nav-icon" class="w-10 cursor-pointer" onclick="toggleSideBar()">
+            </div>
+            <div class="mt-10">
+                <h1 class="font-bold text-offblack-100 text-4xl">Welcome to Pet List</h1>
+            </div>
+            <div class="mb-5">
+                <p class="text-grey-100">Manage all the appointment requests and check-ins</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const sideBar = document.querySelector('#sideBar');
+
+        function toggleSideBar() {
+            if( sideBar.style.display === 'none' || sideBar.style.display == '') {
+                sideBar.style.display = 'flex'
+            } else {
+                sideBar.style.display = 'none'
+            }
+        }
+    </script>
+</body>
+</html>

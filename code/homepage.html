@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VetPortal</title>
+    <link rel="stylesheet" href="./output.css">
+</head>
+<body class="min-h-screen flex items-center justify-center bg-offwhite-100" style="background-image: url(./media/PLACEHOLDER.png); background-size: cover;">
+
+    <div class="flex w-full h-screen flex-col md:flex-row">
+        <?php
+            if(isset($_GET['noLogin'])){ ?>
+            <div class="fixed top-0 right-0 border-red-300 border bg-red-100 p-3 text-center mt-4 mr-4 text-red-400 rounded-md flex items-center justify-center">
+                <img src="./media/circle-exclamation-solid-full.svg" alt="Info" class="size-5 filter-red"><p>&nbsp;You must login first to proceed.</p>
+            </div>
+        <?php } ?>
+    </div>
+
+</body>
+</html>

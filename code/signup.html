@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VetPortal</title>
+  <link rel="stylesheet" href="./output.css" />
+</head>
+<body class="min-h-screen flex items-center justify-center bg-[#FAFAF9]">
+  <div class="flex w-full h-screen flex-col md:flex-row">
+
+     <div class="w-full md:w-1/2 relative md:order-2">
+    <img src="./media/pagepic.png" class="w-full h-full object-cover">
+    </div>  
+
+    <div class="w-full md:w-1/2 max-w-md p-8 flex flex-col justify-center mx-auto md:order-1">
+      <a href="" class="text-grey-100 text-sm mb-4">&larr; Back to Homepage</a>
+      <h2 class="text-3xl font-semibold text-offblack-100">Signup to VetPortal</h2>
+      <p class="text-sm text-gray-500 mb-6">Fill up the form below to Create an Account</p>
+
+      <form action="success_email.php" method="post" class="space-y-4" id="formSignup">
+        <div class="flex space-x-4">
+          <div class="w-1/2">
+            <label class="block text-sm font-medium text-offblack-100 mb-1">First Name</label>
+            <input type="text" required placeholder="Enter first name" name="firstName" class="bg-white w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-blue-300">
+          </div>
+          <div class="w-1/2">
+            <label class="block text-sm font-medium text-offblack-100 mb-1">Last Name</label>
+            <input type="text" required placeholder="Enter last name" name="lastName" class="bg-white w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-blue-300">
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-offblack-100 mb-1">Email Address</label>
+          <input type="email" required placeholder="Enter email address" name="email" class="bg-white w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-blue-300">
+        </div>
+
+        <div class="flex space-x-4">
+          <div class="w-1/2">
+            <label class="block text-sm font-medium text-offblack-100 mb-1">Password</label>
+            <input type="password" required placeholder="Enter password" name="password" id="password" class="bg-white w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-blue-300">
+          </div>
+          <div class="w-1/2">
+            <label class="block text-sm font-medium text-offblack-100 mb-1">Repeat Password</label>
+            <input type="password" required placeholder="Repeat password" id="confirmPassword" class="bg-white w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-blue-300">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-offblack-100 mb-1">Contact Number</label>
+          <input type="text" required placeholder="Enter contact number" name="cNumber" class="mb-1 bg-white w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-blue-300">
+        </div>
+        <button type="submit" name="signupBtn" class="w-full bg-blue-500 hover:bg-blue-600 cursor-pointer text-white font-semibold py-2 rounded-md">Signup</button>
+      </form>
+      <p class="mt-4 text-sm text-grey-100">Already have an account? 
+      <a href="./login.php" class="text-blue-600 hover:underline font-bold">Log in</a></p>
+    </div>
+   <script>
+        document.getElementById("formSignup").addEventListener("submit", function (event) {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+
+            if (password === "") {
+                alert("Password field cannot be empty.");
+                event.preventDefault();
+            } else if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                event.preventDefault();
+            }
+        });
+    </script>
+  </div>
+</body>
+</html>

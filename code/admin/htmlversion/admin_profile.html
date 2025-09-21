@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VetPortal</title>
+  <link rel="stylesheet" href="../output.css">
+  <style>
+      #sideBar { transition: all 0.5s ease; }
+      .nav-item { transition: all 0.3s ease; }
+      .nav-item:hover { transform: translateX(4px); }
+      .nav-active { background-color: oklch(62.3% 0.214 259.815); color: white; }
+  </style>
+</head>
+<body class="min-h-screen bg-offwhite-100">
+
+  <!-- Sidebar -->
+  <div class="fixed w-[60%] md:w-[18%] bg-white h-full p-6 flex flex-col text-grey-100 z-50 shadow-2xl" id="sideBar" style="transform: translateX(-100%);">
+    <div class="flex flex-col">
+      <div class="flex justify-end">
+        <img src="../media/burger-short.png" alt="nav-icon point" class="w-10 cursor-pointer" onclick="toggleSideBar()">
+      </div>
+      <div class="flex mt-20">
+        <div class="bg-blue-500 w-12 h-12 filter-grey rounded-md"></div>
+        <div class="ml-2">
+          <h1 class="font-semibold text-offblack-100 text-xl">Glydel Despojo</h1>
+          <a href="#" class="text-grey-100 cursor-pointer hover:text-blue-500">View Profile</a>
+        </div>  
+      </div>
+      <div class="flex flex-col gap-3 mt-20">
+        <a href="dashboard.html" class="flex items-center rounded-md hover:bg-lightgrey-100 hover:cursor-pointer hover:text-blue-500 p-3 nav-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25" />
+          </svg>
+          <p class="ml-2">Dashboard</p>
+        </a>
+        <a href="all_clinics.html" class="flex items-center rounded-md hover:bg-lightgrey-100 hover:cursor-pointer hover:text-blue-500 p-3 nav-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+          </svg>
+          <p class="ml-2">All Maps</p>
+        </a>
+      </div>
+      <a href="logout.html" class="flex items-center rounded-md hover:bg-lightgrey-100 hover:cursor-pointer mt-20 hover:text-red-500 p-3 nav-item">
+        <svg class="size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+        </svg>
+        <p class="ml-2">Log-out</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="p-10 w-full h-full flex flex-col">
+    <div class="flex flex-col border-b border-b-lightgrey-100">
+      <div>
+        <img src="../media/burger-long.png" alt="nav-icon" class="w-10 cursor-pointer" onclick="toggleSideBar()">
+      </div>
+      <div class="mt-10">
+        <h1 class="font-bold text-offblack-100 text-4xl">Clinic Information</h1>
+      </div>
+      <div class="mb-5">
+        <p class="text-grey-100 flex items-center">Manage your clinic details and information</p>
+      </div>
+    </div>
+
+    <!-- Basic Information -->
+    <div class="flex flex-col items-center mt-5">
+      <div class="flex flex-col p-5 bg-white w-full rounded-lg shadow-sm">
+        <h1 class="font-semibold text-offblack-100 text-xl">Basic Information</h1>
+        <div class="grid grid-cols-2 gap-x-5 gap-y-2 mt-5">
+          <div class="p-6">
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 class="text-sm font-medium text-gray-700 mb-3 flex items-center gap-2">Clinic Image</h3>
+                <img src="../media/sample-clinic.png" alt="" class="rounded-md">
+              </div>
+              
+              <div class="space-y-6">
+                <div>
+                  <label class="text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                  <p class="text-gray-900 bg-gray-50 p-3 rounded-lg">davao.vetclinic@gmail.com</p>
+                </div>
+                <div>
+                  <label class="text-sm font-medium text-gray-700 mb-2">Clinic Name</label>
+                  <p class="text-gray-900 bg-gray-50 p-3 rounded-lg">Davao Veterinary Clinic</p>
+                </div>
+                <div>
+                  <label class="text-sm font-medium text-gray-700 mb-2">Clinic Owner</label>
+                  <p class="text-gray-900 bg-gray-50 p-3 rounded-lg">Dr. Maria Santos</p>
+                </div>
+                <div>
+                  <label class="text-sm font-medium text-gray-700 mb-2">Location</label>
+                  <p class="text-gray-900 bg-gray-50 p-3 rounded-lg">123 Main Street, Davao City, Philippines</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Operating Schedule -->
+      <div class="flex flex-col mt-5 p-5 bg-white w-full rounded-lg shadow-sm">
+        <h1 class="font-semibold text-offblack-100 text-xl">Operating Schedule</h1>
+        <div class="w-full p-2 flex flex-col text-grey-100 mt-5 border border-lightgrey-100 rounded-lg">
+          <div class="flex items-center justify-between py-3 border-b border-lightgrey-100">
+            <span class="font-medium text-offblack-100">Monday</span>
+            <div class="flex items-center gap-3">
+              <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">Open</span>
+              <span class="text-grey-100">8:00 AM - 6:00 PM</span>
+            </div>
+          </div>
+          <div class="flex items-center justify-between py-3 border-b border-lightgrey-100">
+            <span class="font-medium text-offblack-100">Tuesday</span>
+            <div class="flex items-center gap-3">
+              <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">Open</span>
+              <span class="text-grey-100">8:00 AM - 6:00 PM</span>
+            </div>
+          </div>
+          <div class="flex items-center justify-between py-3 border-b border-lightgrey-100">
+            <span class="font-medium text-offblack-100">Wednesday</span>
+            <div class="flex items-center gap-3">
+              <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">Open</span>
+              <span class="text-grey-100">8:00 AM - 6:00 PM</span>
+            </div>
+          </div>
+          <div class="flex items-center justify-between py-3 border-b border-lightgrey-100">
+            <span class="font-medium text-offblack-100">Thursday</span>
+            <div class="flex items-center gap-3">
+              <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">Open</span>
+              <span class="text-grey-100">8:00 AM - 6:00 PM</span>
+            </div>
+          </div>
+          <div class="flex items-center justify-between py-3 border-b border-lightgrey-100">
+            <span class="font-medium text-offblack-100">Friday</span>
+            <div class="flex items-center gap-3">
+              <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">Open</span>
+              <span class="text-grey-100">8:00 AM - 6:00 PM</span>
+            </div>
+          </div>
+          <div class="flex items-center justify-between py-3 border-b border-lightgrey-100">
+            <span class="font-medium text-offblack-100">Saturday</span>
+            <div class="flex items-center gap-3">
+              <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">Open</span>
+              <span class="text-grey-100">9:00 AM - 4:00 PM</span>
+            </div>
+          </div>
+          <div class="flex items-center justify-between py-3">
+            <span class="font-medium text-offblack-100">Sunday</span>
+            <div class="flex items-center gap-3">
+              <span class="px-3 py-1 bg-red-100 text-red-800 text-sm rounded-full">Closed</span>
+              <span class="text-grey-100">-</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Offered Services -->
+      <div class="flex flex-col mt-5 p-5 bg-white w-full rounded-lg shadow-sm border border-gray-200">
+        <div class="border-b border-gray-200 pb-4">
+          <h2 class="text-lg font-semibold text-gray-900">Offered Services</h2>
+        </div>
+        <div class="p-6">
+          <div class="flex flex-wrap gap-3">
+            <span class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium service-tag cursor-pointer hover:bg-blue-200">General Checkups</span>
+            <span class="px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium service-tag cursor-pointer hover:bg-green-200">Vaccinations</span>
+            <span class="px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium service-tag cursor-pointer hover:bg-purple-200">Surgery</span>
+            <span class="px-4 py-2 bg-red-100 text-red-800 rounded-full text-sm font-medium service-tag cursor-pointer hover:bg-red-200">Emergency Care</span>
+            <span class="px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium service-tag cursor-pointer hover:bg-yellow-200">Dental Care</span>
+            <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium service-tag cursor-pointer hover:bg-indigo-200">Grooming</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const sideBar = document.querySelector('#sideBar');
+    function toggleSideBar() {
+      sideBar.style.transform = (sideBar.style.transform === 'translateX(-100%)' || sideBar.style.transform === '') 
+        ? 'translateX(0%)' 
+        : 'translateX(-100%)';
+    }
+  </script>
+</body>
+</html>
